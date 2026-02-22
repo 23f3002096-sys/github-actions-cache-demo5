@@ -1,0 +1,17 @@
+name: Cache Demo
+
+on: [push]  # Triggers on any push to any branch
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: prime-cache-23556f4  # Exact step name required
+      uses: actions/cache@v4
+      with:
+        key: cache-23556f4  # Exact key required
+        path: ~/.cache  # Caches a dummy path (doesn't matter what)
