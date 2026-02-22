@@ -1,0 +1,13 @@
+name: Cache Demo
+on: [push]
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: prime-cache-23556f4
+      uses: actions/cache@v4
+      with:
+        key: cache-23556f4
+        path: ~/.cache
